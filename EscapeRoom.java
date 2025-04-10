@@ -16,6 +16,7 @@ public class EscapeRoom
     {
         // initialise instance variables
         x = 0;
+        return;
     }
 
     /**
