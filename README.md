@@ -8,9 +8,11 @@ Game Theme: Escape Room.
 ![IMG_2468](https://github.com/user-attachments/assets/bbe89a04-56db-4298-b069-da1287761399)
 
 Classes needed:
-- Game.java (from hw)
-- Player.java (from hw)
-- Room.java (from hw)
-- Animal.java (from hw)
-- Treasure.java (from hw)
+- Game.java 
+- Player.java 
+- Room.java 
+- Animal.java
+- subclass: Snake.java
+- subclass: Owl.java
+- subclass: villain.java
 - GameGUI.java
