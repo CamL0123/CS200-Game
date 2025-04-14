@@ -6,3 +6,11 @@ Game Theme: Escape Room.
 - Items: These may include items that serve as hints or clues to open the door to next room, food to gain more life points, and keys to open doors
 - Goal: The goal of the user is to successfully escape.
 ![IMG_2468](https://github.com/user-attachments/assets/bbe89a04-56db-4298-b069-da1287761399)
+
+Classes needed:
+- Game.java (from hw)
+- Player.java (from hw)
+- Room.java (from hw)
+- Animal.java (from hw)
+- Treasure.java (from hw)
+- GameGUI.java
