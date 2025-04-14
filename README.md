@@ -12,7 +12,10 @@ Classes needed:
 - Player.java 
 - Room.java 
 - Animal.java
-- subclass: Snake.java
-- subclass: Owl.java
-- subclass: villain.java
+  Damage: the animal will take away some health points each time the player gets a question wrong. When player health hits 0 they automatically start again at the beginning of the room.
+- Animal subclass: Snake.java
+- Animal subclass: Owl.java
+- Animal subclass: villain.java
+  For villain game: villain's name in the game is "Human" for game purposes, while its subclass name is villain.Villain asks if the player wants to leave, if player says "yes" player starts from room0. if player says "no", player fights the villain. the player wins if the player has more than 50 health points left, else starts over from room0. 
 - GameGUI.java
+  No longer a text-based game - will need to have buttons that control player's actions.
