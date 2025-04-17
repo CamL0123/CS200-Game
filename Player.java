@@ -1,9 +1,3 @@
-/**
- * Write a description of class Player here: This class describes the player in the game.
- *
- * @Cameron Li
- * @version Feb6
- */
 import java.util.ArrayList; 
 public class Player
 {
@@ -65,7 +59,25 @@ public class Player
 
     public void resetPlayer() {
         this.health = 100; // Reset health to 100
-        this.location = new Room("room0", "Starting Room"); // Reset location to room0
+        this.location = new Room("room1", "Starting Room"); // Reset location to room0
+    }
+
+    public void movePlayertoRoom1(){
+        Room room0 = new Room("room1", "Starting Room");
+        this.setLocation(room1);
+        System.out.println("You are in room1.");
+    }
+
+    public void movePlayertoRoom2(){
+        Room room2 = new Room("room2", "Room 2");
+        this.setLocation(room2);
+        System.out.println("You are back to room2.");
+    }
+
+    public void movePlayertoRoom3(){
+        Room room3 = new Room("room3", "Room 3");
+        this.setLocation(room3);
+        System.out.println("You are back to room3.");
     }
 }    
 
