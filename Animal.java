@@ -15,15 +15,26 @@ public class Animal
     /**
      * Constructor for objects of class Animal
      */
-    public Animal(String name)
+    public Animal(String name, int damage)
     {
-        this.name=name;
+        this.name= name;
+        this.damage = damage;
     }
-
+    
+    public String setAnimalName(String animalName){
+        this.name= animalName;
+        return name;
+    }
+    
+    public String getAnimalDamage(int animalDamage){
+        this.damage= animalDamage;
+        return name;
+    }
+    
     public String getAnimalName(){
         return name;
     }
-        public int getAnimalDamage(){
+    public int getAnimalDamage(){
         return damage;
     }
     

@@ -1,11 +1,15 @@
 #BlueJ class context
 comment0.target=Animal
 comment0.text=\n\ Write\ a\ description\ of\ class\ Animal\ here.\n\n\ @author\ (your\ name)\n\ @version\ (a\ version\ number\ or\ a\ date)\n
-comment1.params=name
-comment1.target=Animal(java.lang.String)
+comment1.params=name\ damage
+comment1.target=Animal(java.lang.String,\ int)
 comment1.text=\n\ Constructor\ for\ objects\ of\ class\ Animal\n
-comment2.params=
-comment2.target=java.lang.String\ getAnimalName()
-comment3.params=
-comment3.target=int\ getAnimalDamage()
-numComments=4
+comment2.params=animalName
+comment2.target=java.lang.String\ setAnimalName(java.lang.String)
+comment3.params=animalDamage
+comment3.target=java.lang.String\ getAnimalDamage(int)
+comment4.params=
+comment4.target=java.lang.String\ getAnimalName()
+comment5.params=
+comment5.target=int\ getAnimalDamage()
+numComments=6

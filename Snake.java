@@ -10,9 +10,10 @@ import java.util.*;
 public class Snake extends Animal {
     // instance variables - replace the example below with your own
     // Constructor
-    public Snake() {
+    public Snake(int Damage) {
         super("Snake");
-        damage = 
+        damage = 10;
+        setDamage 
     }
 
 }
