@@ -13,10 +13,10 @@ public class Player
     Room location;
     
     public Player(String d, String n, Room location) {
-        // TODO: complete this constructor
         this.description=d; 
         this.name=n;
         this.location=location;
+        this.health=100; // Assuming default health is 100
         
     }
     
@@ -61,6 +61,11 @@ public class Player
     @Override
     public String toString(){
         return name;
+    }
+
+    public void resetPlayer() {
+        this.health = 100; // Reset health to 100
+        this.location = new Room("room0", "Starting Room"); // Reset location to room0
     }
 }    
 
