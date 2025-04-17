@@ -2,6 +2,6 @@
 comment0.target=Snake
 comment1.params=
 comment1.target=Snake()
-comment2.params=
-comment2.target=boolean\ SnakeRiddle()
+comment2.params=args
+comment2.target=void\ main(java.lang.String[])
 numComments=3
