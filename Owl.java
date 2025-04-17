@@ -27,7 +27,7 @@ public class Owl extends Animal {
         factSets.add(new FactSet("Lightning can strike the same place twice.", "Humans share 98% of their DNA with chimpanzees.", "The Sahara Desert is the largest desert in the world.", "A", "B"));
     }
 
-    public boolean playTruthGame(Scanner scanner) {
+    public void playTruthGame(String answerString) {
         Random rand = new Random();
         FactSet set = factSets.get(rand.nextInt(factSets.size()));
 
@@ -43,10 +43,24 @@ public class Owl extends Animal {
 
         if (correct) {
             System.out.println("Congratulations! You're now getting to the next room.");
+            movePlayertoRoom3();
         } else {
             System.out.println("Wrong answer! The Owl is not amused...");
+            System.out.println("The correct answers were: " + set.truths[0] + " and " + set.truths[1]);
+            System.out.println("You lose 10 health points.");
+            Player player = new Player();
+            player.takeDamage(10);
+            System.out.println("You have " + player.getHealth() + " health points left.");
+            if (player.getHealth() <= 0) {
+                System.out.println("Game over! You have no health left.");
+                // Reset player or end game
+                System.out.println("You are back to room0.");
+                player.resetPlayer();
+            }
+            else{
+                movePlayertoRoom2();
+            }
+            
         }
-
-        return correct;
     }
 }
