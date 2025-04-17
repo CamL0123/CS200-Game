@@ -12,39 +12,40 @@ public class Room
     String name;
     String description;
     boolean locked;
-    Room n, e, s, w;
+    Room one, two, three;
     Animal animal;
-    //ArrayList<Treasure> treasureChest;
 
     public Room (String name, String description, boolean locked, Animal animal) {
         this.name = name;
         this.description = description;
         this.locked = locked;
         this.animal=animal;
-        //this.treasureChest=new ArrayList<>();
     }
     
-    public void setNeighbors(Room n, Room e, Room s, Room w){
-        this.n = n;
-        this.e = e;
-        this.s = s;
-        this.w = w;
+    public void setNeighbors(Room one, Room two, Room three){
+        this.room1 = one;
+        this.room2 = two;
+        this.room3 = three;
     }
     
-    public Room getN() {
-        return n;
+    public Room getOneRoom() {
+        return one;
     }
     
-    public Room getE() {
-        return e;
+    public Room getTwoRoom() {
+        return two;
     }
     
-    public Room getS() {
-        return s;
+    public Room getThreeRoom() {
+        return three;
     }
     
-    public Room getW() {
-        return w;
+    public Animal getAnimal() {
+        return animal;
+    }
+
+    public void setAnimal(Animal animal) {
+        this.animal = animal;
     }
     
     // TODO: override the toString() to display the name and description of the room
