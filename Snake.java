@@ -12,6 +12,7 @@ public class Snake extends Animal {
     // Constructor
     public Snake() {
         super("Snake");
+        damage = 
     }
 
 }
