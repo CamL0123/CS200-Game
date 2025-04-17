@@ -11,8 +11,7 @@ import java.util.Scanner;
 public class Snake extends Animal {
     // instance variables - replace the example below with your own
     // Constructor
-    Scanner scanner = new Scanner(System.in);
-    public Snake(int Damage) {
+    public Snake(){
         super("Snake", 10);
     }
     
@@ -39,6 +38,7 @@ public class Snake extends Animal {
             System.out.println("Congratulations! You open the door to the next room.");
         } else {
             System.out.println("Wrong answer! Snake wants to bite you");
+            
         }
         return true;
     }

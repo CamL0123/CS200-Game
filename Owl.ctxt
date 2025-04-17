@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=Owl
+comment1.params=
+comment1.target=Owl()
+comment2.params=scanner
+comment2.target=boolean\ playTruthGame(java.util.Scanner)
+numComments=3
