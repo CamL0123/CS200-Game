@@ -27,24 +27,19 @@ public class Game {
     Player p1;
     Room r0, r1, r2;
     
-    
-    
     public Game(){
-        Animal snake=new Animal("Gigantic Snake");
-        Animal owl=new Animal("Owl");
-        Animal villain=new Animal("Human");
-        
-        
+        Snake snake = new Snake();
+        Owl owl = new Owl();
+        Villain villain = new Villain();
+           
         // TODO: instantiate new objects for each of the four rooms r0, r1, r2, r3
-        r0 = new Room("First Room", "The leftest room",true,snake);
-        r1 = new Room("Second Room", "Room in the middle", true,owl);
+        r0 = new Room("First Room", "The leftest room",true,owl);
+        r1 = new Room("Second Room", "Room in the middle", true,snake);
         r2 = new Room("Final Room", "The rightest room", true, villain);
         
         // TODO: for each of the four rooms, add their neighbors using the setNeighbors() method for each one
-        r0.setNeighbors(null, r1, null, null); 
-        r1.setNeighbors(null, r2,null, r0); 
-        r2.setNeighbors(null, null, null,r1); 
-        
+        r0.setNextRoom(r1); 
+        r1.setNextRoom(r2);  
         
         p1 = new Player("player 1", "this is you!", r0);
         System.out.println("You are starting in: "+p1.getLocation());
@@ -83,7 +78,7 @@ public class Game {
         Room currentRoom = p1.getLocation();
         
         Room nextRoom = null;
-        switch (direction) {
+        /*switch (direction) {
             case "north":
                nextRoom = currentRoom.getN();
                break;
@@ -100,7 +95,7 @@ public class Game {
             System.out.println("Unknown direction, player did not move.");
             return;
                 
-        }
+        }*/
         
         
         if (nextRoom != null) {
@@ -117,6 +112,51 @@ public class Game {
         }else {
             System.out.println("The location you wish to go to is not valid!");
         }    
+    }
+    
+    public Animal getAnimal(){
+        Room currentRoom = p1.getLocation();
+        return currentRoom.getAnimal();
+    }
+    
+    public Player getPlayer(){
+        return p1;
+    }
+    
+    public String getCurrentRoomRiddle(){
+        Room currentRoom = p1.getLocation();
+        Animal a = currentRoom.getAnimal();
+        String riddle = "";
+        System.out.println(a);
+        if(a instanceof Owl){
+            riddle = ((Owl)a).getRiddle();
+        }
+        return riddle;
+    }
+    
+    public String checkRoomAnswer(String answer){
+        Animal animal = getAnimal();
+        if(animal instanceof Owl){
+            Owl o = (Owl)animal;
+            if(o.playTruthGame(answer)){
+                getPlayer().setLocation(r1);
+                return o.correctString();
+            }else{
+                getPlayer().takeDamage(10);
+                return o.incorrectString();
+            }
+        }
+        return ""; 
+    }
+    
+    public void resetPlayer(Room r){
+        p1.setHealth(100);
+        p1.setLocation(r0);
+    }
+    
+    public void movePlayerToNextRoom(){
+        Room current = p1.getLocation();
+        p1.setLocation(current.getNextRoom());
     }
     
     public static void main(String[] args){

@@ -12,7 +12,7 @@ public class Room
     String name;
     String description;
     boolean locked;
-    Room one, two, three;
+    Room nextRoom;
     Animal animal;
 
     public Room (String name, String description, boolean locked, Animal animal) {
@@ -22,22 +22,12 @@ public class Room
         this.animal=animal;
     }
     
-    public void setNeighbors(Room one, Room two, Room three){
-        this.room1 = one;
-        this.room2 = two;
-        this.room3 = three;
+    public void setNextRoom(Room next) {
+        this.nextRoom = next;
     }
     
-    public Room getOneRoom() {
-        return one;
-    }
-    
-    public Room getTwoRoom() {
-        return two;
-    }
-    
-    public Room getThreeRoom() {
-        return three;
+    public Room getNextRoom() {
+        return this.nextRoom;
     }
     
     public Animal getAnimal() {

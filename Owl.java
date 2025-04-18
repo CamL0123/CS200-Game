@@ -1,6 +1,10 @@
 import java.util.*;
 
 public class Owl extends Animal {
+    
+    // We haven't talked about private classes, don't use this
+    // Only use the concepts that we have talked about
+    // Make a separate class for this
     private static class FactSet {
         String A, B, C;
         String[] truths;
@@ -13,7 +17,8 @@ public class Owl extends Animal {
         }
     }
 
-    private List<FactSet> factSets;
+    private ArrayList<FactSet> factSets;
+    private FactSet set;
 
     public Owl() {
         super("Owl", 10); // You can define Owl damage value here
@@ -27,21 +32,23 @@ public class Owl extends Animal {
         factSets.add(new FactSet("Lightning can strike the same place twice.", "Humans share 98% of their DNA with chimpanzees.", "The Sahara Desert is the largest desert in the world.", "A", "B"));
     }
 
-    public void playTruthGame(String answerString) {
+    public String getRiddle() {
         Random rand = new Random();
-        FactSet set = factSets.get(rand.nextInt(factSets.size()));
+        set = factSets.get(rand.nextInt(factSets.size()));
 
-        System.out.println("🦉 Owl Challenge: Two Truths and a Lie! Choose the two true statements.");
-        System.out.println("A. " + set.A);
-        System.out.println("B. " + set.B);
-        System.out.println("C. " + set.C);
-        System.out.print("Enter your two choices (e.g., AB): ");
+        String riddle = "🦉 Owl Challenge: Two Truths and a Lie! Choose the two true statements.\n"+
+        "A. " + set.A+"\n"+
+        "B. " + set.B+"\n"+
+        "C. " + set.C+"\n"+
+        "Enter your two choices (e.g., AB): ";
+        return riddle;
+    }
+    
+    public boolean playTruthGame(String answerString) {
 
-        String answer = scanner.nextLine().toUpperCase();
+        return answerString.contains(set.truths[0]) && answerString.contains(set.truths[1]) && answerString.length() == 2;
 
-        boolean correct = answer.contains(set.truths[0]) && answer.contains(set.truths[1]) && answer.length() == 2;
-
-        if (correct) {
+        /*if (correct) {
             System.out.println("Congratulations! You're now getting to the next room.");
             movePlayertoRoom3();
         } else {
@@ -61,6 +68,16 @@ public class Owl extends Animal {
                 movePlayertoRoom2();
             }
             
-        }
+        }*/
+    }
+    
+    public String correctString(){
+        return "Congratulations! You're now getting to the next room.";
+    }
+    
+    public String incorrectString(){
+        return "Wrong answer! The Owl is not amused...\n"+
+                        "The correct answers were: " + set.truths[0] + " and " + set.truths[1]+"\n"+
+                        "You lose 10 health points.";
     }
 }
