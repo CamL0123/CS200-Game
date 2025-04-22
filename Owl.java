@@ -4,14 +4,8 @@ public class Owl extends Animal {
     private List<FactSet> factSets;
 
     public Owl() {
-        super("Owl", 10);
-        factSets = new ArrayList<>();
-
-        factSets.add(new FactSet("Owls can rotate their heads 270°.", "Owls are mammals.", "Owls hunt at night.", "A", "C"));
-        factSets.add(new FactSet("Owls have excellent vision.", "Owls can swim long distances.", "Owls regurgitate bones.", "A", "C"));
-        factSets.add(new FactSet("Owls lay eggs.", "Owls build nests underground.", "Owls have asymmetrical ears.", "A", "C"));
-        factSets.add(new FactSet("The Great Wall of China is visible from space.", "Water boils at a lower temperature at higher altitudes.", "Bananas are berries, but strawberries are not.", "B", "C"));
-        factSets.add(new FactSet("Lightning can strike the same place twice.", "Humans share 98% of their DNA with chimpanzees.", "The Sahara Desert is the largest desert in the world.", "A", "B"));
+    super("Owl", 10);
+    factSets = FactSet.getOwlFactSets(); 
     }
 
     public String playTruthGame(String answerString, Player player) {
