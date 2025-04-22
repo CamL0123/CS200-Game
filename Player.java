@@ -13,7 +13,7 @@ public class Player
     Room location;
     
     public Player(String n) {
-        this.description=d; 
+        this.description="d"; 
         this.name=n;
         this.location=location;
         this.health=100; // Assuming default health is 100
