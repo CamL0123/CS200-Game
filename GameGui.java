@@ -2,7 +2,7 @@
  * Write a description of class Room here.
  *
  * @Cameron Li
- * @version April 21
+ * @version April 22
  */
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -16,7 +16,7 @@ import javafx.geometry.Insets;
 import javafx.scene.control.Label;
 import javafx.scene.input.KeyCode;
 
-public class GameGUI extends Application {
+public class GameGui extends Application {
     
     private Game game;    
     
@@ -44,19 +44,49 @@ public class GameGUI extends Application {
                 //if (answerBox.getText().equals("Something")){
                 //    label.setText(answerBox.getText());
                 //}
-                
+                Player player=game.getPlayer();
                 Animal animal = game.getAnimal();
                 if(animal instanceof Owl){
                     Owl o = (Owl)animal;
                     if(o.playTruthGame(answerBox.getText())){
                         label.setText(o.correctString());
                         game.movePlayerToNextRoom();
-                        Image imageS = new Image("file:Big Snake.jpg");
-                        imageView.setImage(imageS); 
+                        Image imageO = new Image("file:Big Owl.jpg");
+                        imageView.setImage(imageO); 
                         riddle.setText(game.getCurrentRoomRiddle());
                     }else{
                         label.setText(o.incorrectString());
                         game.getPlayer().takeDamage(10);
+                        healthLabel=new Label("Health" + player.getHealth()+"/100");
+                    }
+                }
+                
+                if (animal instanceof Snake){
+                    Snake s = (Snake)animal;
+                    if (s.playRiddle(answerBox.getText())){
+                        label.setText(s.correctString());
+                        game.movePlayerToNextRoom();
+                        Image imageS = new Image("file: Big Snake.jpg");
+                        riddle.setText(game.getCurrentRoomRiddle());
+                    }else{
+                        label.setText(s.incorrectString());
+                        game.getPlayer().takeDamage(10);
+                        healthLabel=new Label("Health" + player.getHealth()+"/100");
+                    }
+                }
+                
+                if (animal instanceof Villain){
+                    Villain v=(Villain)animal;
+                    if (v.ExitOrNot(answerBox.getText())){
+                        label.setText(v.goBackString());//this method should return a string like "Haha sorry you're being sent back"
+                        game.resetPlayer();
+                    }else{
+                        if (player.getHealth()>50){
+                            label.setText(v.winningString());//this should be something like "fine! go! you win!"
+                        }else{
+                            label.setText(v.losingString());//something like "can't beat me!"
+                            game.resetPlayer();
+                        }
                     }
                 }
             }
@@ -90,4 +120,3 @@ public class GameGUI extends Application {
         launch(args);
     }
 }
-
