@@ -29,7 +29,7 @@ public class Game {
     
     
     public Game(){
-        Animal snake=new Animal("Gigantic Snake");
+        Animal snake=new Animal("Snake");
         Animal owl=new Animal("Owl");
         Animal villain=new Animal("Human");
         
@@ -75,7 +75,110 @@ public class Game {
             }
         }
     }
+    public void movePlayer(String direction) {
+        direction = direction.toLowerCase();
+        Room currentRoom = p1.getLocation();
+        
+        Room nextRoom = null;
+        /*switch (direction) {
+            case "north":
+               nextRoom = currentRoom.getN();
+               break;
+            case "south":
+                nextRoom = currentRoom.getS();
+                break;
+            case "east":
+                nextRoom = currentRoom.getE();
+                break;
+            case "west":
+                nextRoom = currentRoom.getW();
+                break;
+            default:
+            System.out.println("Unknown direction, player did not move.");
+            return;
+                
+        }*/
+        
+        
+        if (nextRoom != null) {
+            p1.setLocation(nextRoom);
+            System.out.println("You are now in: " + nextRoom);
+                if (nextRoom.animal != null) {
+                int damage = nextRoom.animal.getAnimalDamage();
+                System.out.println("A " + nextRoom.animal.getAnimalName() + " attacked you!");
+                p1.takeDamage(damage);
+                System.out.println("Your health is now at " + p1.getHealth() + " points.");
+            }else {
+            System.out.println("The location you wish to go to is not valid!");
+            System.out.println("You are now in: " + currentRoom); }
+        }else {
+            System.out.println("The location you wish to go to is not valid!");
+        }    
+    }
     
+    public Animal getAnimal(){
+        Room currentRoom = p1.getLocation();
+        return currentRoom.getAnimal();
+    }
     
+    public Player getPlayer(){
+        return p1;
+    }
+    
+    public String getCurrentRoomRiddle(){
+        Room currentRoom = p1.getLocation();
+        Animal a = currentRoom.getAnimal();
+        String riddle = "";
+        System.out.println(a);
+        if(a instanceof Owl){
+            riddle = ((Owl)a).getRiddle();
+        }
+        return riddle;
+    }
+    
+    public String checkRoomAnswer(String answer){
+        Animal animal = getAnimal();
+        if(animal instanceof Owl){
+            Owl o = (Owl)animal;
+            if(o.playTruthGame(answer)){
+                getPlayer().setLocation(r1);
+                return o.correctString();
+            }else{
+                getPlayer().takeDamage(10);
+                return o.incorrectString();
+            }
+        }
+        return ""; 
+    }
+    
+    public void resetPlayer(Room r){
+        p1.setHealth(100);
+        p1.setLocation(r0);
+    }
+    
+    public void movePlayerToNextRoom(){
+        Room current = p1.getLocation();
+        p1.setLocation(current.getNextRoom());
+    }
+    
+    public static void main(String[] args){
+        Game gm = new Game();
+        Scanner scan = new Scanner(System.in);
+        String input = "";
+
+        // TODO: write an introduction for your game that will be displayed to the user 
+        // Let the user know what they can do and how to quit, the user quits by entering 'q'
+        System.out.println("Or press q to quit.");
+        while(!input.equals("q")) {
+            input = scan.nextLine();
+            if(input.equals("q")) {
+                System.out.println("Thanks for playing!");
+                break;
+            }else{
+                gm.parseCommand(input);
+            }
+        }
+        scan.close();
+    }
         
 }
