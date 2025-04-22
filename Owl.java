@@ -2,6 +2,7 @@ import java.util.*;
 
 public class Owl extends Animal {
     private List<FactSet> factSets;
+    private FactSet set;
 
     public Owl() {
     super("Owl", 10);
