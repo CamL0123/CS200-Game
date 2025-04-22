@@ -8,34 +8,52 @@ public class Owl extends Animal {
     factSets = FactSet.getOwlFactSets(); 
     }
 
-    public String playTruthGame(String answerString, Player player) {
+    public String getRiddle() {
         Random rand = new Random();
-        FactSet set = factSets.get(rand.nextInt(factSets.size()));
+        set = factSets.get(rand.nextInt(factSets.size()));
 
-        StringBuilder output = new StringBuilder();
-        output.append("Owl Challenge: Two Truths and a Lie! Choose the two true statements.\n");
-        output.append("A. ").append(set.A).append("\n");
-        output.append("B. ").append(set.B).append("\n");
-        output.append("C. ").append(set.C).append("\n");
+        String riddle = "🦉 Owl Challenge: Two Truths and a Lie! Choose the two true statements.\n"+
+        "A. " + set.A+"\n"+
+        "B. " + set.B+"\n"+
+        "C. " + set.C+"\n"+
+        "Enter your two choices (e.g., AB): ";
+        return riddle;
+    }
 
-        String answer = answerString.toUpperCase();
+    public boolean playTruthGame(String answerString) {
 
-        boolean correct = answer.contains(set.truths[0]) && answer.contains(set.truths[1]) && answer.length() == 2;
+        return answerString.contains(set.truths[0]) && answerString.contains(set.truths[1]) && answerString.length() == 2;
 
-        if (correct) {
-            output.append("Correct! You're now getting to the next room.");
+        /*if (correct) {
+            System.out.println("Congratulations! You're now getting to the next room.");
+            movePlayertoRoom3();
         } else {
-            output.append("Wrong answer! The Owl is not amused...\n");
-            output.append("The correct answers were: ").append(set.truths[0]).append(" and ").append(set.truths[1]).append("\n");
-            player.takeDamage(super.getDamage());
-            output.append("You lose ").append(super.getDamage()).append(" health points.\n");
-            output.append("You now have ").append(player.getHealth()).append(" health points.\n");
+            System.out.println("Wrong answer! The Owl is not amused...");
+            System.out.println("The correct answers were: " + set.truths[0] + " and " + set.truths[1]);
+            System.out.println("You lose 10 health points.");
+            Player player = new Player();
+            player.takeDamage(10);
+            System.out.println("You have " + player.getHealth() + " health points left.");
             if (player.getHealth() <= 0) {
+                System.out.println("Game over! You have no health left.");
+                // Reset player or end game
+                System.out.println("You are back to room0.");
                 player.resetPlayer();
-                output.append("Game over! You are back to room 0.");
             }
-        }
-
-        return output.toString();
+            else{
+                movePlayertoRoom2();
+            }
+            
+        }*/
+    }
+    
+    public String correctString(){
+        return "Congratulations! You're now getting to the next room.";
+    }
+    
+    public String incorrectString(){
+        return "Wrong answer! The Owl is not amused...\n"+
+                        "The correct answers were: " + set.truths[0] + " and " + set.truths[1]+"\n"+
+                        "You lose 10 health points.";
     }
 }
