@@ -25,7 +25,7 @@ public class Snake extends Animal {
         "Enter your answer (e.g., A): ";
     }
     
-    public boolean playTruthGame(String answerString) {
+    public boolean playRiddle(String answerString) {
         return answerString.equals("A");
     }
     
