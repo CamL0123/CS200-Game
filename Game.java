@@ -29,9 +29,9 @@ public class Game {
     
     
     public Game(){
-        Animal snake=new Animal("Snake");
-        Animal owl=new Animal("Owl");
-        Animal villain=new Animal("Human");
+        Animal snake=new Animal("Snake",10);
+        Animal owl=new Animal("Owl",10);
+        Animal villain=new Animal("Human",0);
         
         
         // TODO: instantiate new objects for each of the four rooms r0, r1, r2, r3
