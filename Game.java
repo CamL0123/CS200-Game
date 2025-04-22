@@ -39,10 +39,8 @@ public class Game {
         r1 = new Room("Second Room", "Room in the middle", true,owl);
         r2 = new Room("Final Room", "The rightest room", true, villain);
         
-        // TODO: for each of the four rooms, add their neighbors using the setNeighbors() method for each one
-        r0.setNeighbors(null, r1, null, null); 
-        r1.setNeighbors(null, r2,null, r0); 
-        r2.setNeighbors(null, null, null,r1); 
+        r0.setNextRoom(r1); 
+        r1.setNextRoom(r2);  
         
         
         p1 = new Player("player 1", "this is you!", r0);
