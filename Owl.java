@@ -26,7 +26,7 @@ public class Owl extends Animal {
         factSets.add(new FactSet("The Great Wall of China is visible from space.", "Water boils at a lower temperature at higher altitudes.", "Bananas are berries, but strawberries are not.", "B", "C"));
         factSets.add(new FactSet("Lightning can strike the same place twice.", "Humans share 98% of their DNA with chimpanzees.", "The Sahara Desert is the largest desert in the world.", "A", "B"));
     }
-//need to modify this method to return String
+//need to modify this method to return String, get rid of scanner
     public void playTruthGame(String answerString) {
         Random rand = new Random();
         FactSet set = factSets.get(rand.nextInt(factSets.size()));
