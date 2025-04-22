@@ -130,7 +130,11 @@ public class Game {
         System.out.println(a);
         if(a instanceof Owl){
             riddle = ((Owl)a).getRiddle();
-        }
+        }if (a instanceof Snake){
+            riddle = ((Snake)a).getRiddle();
+        }else{
+            riddle = ((Villain)a).getRiddle();
+            }
         return riddle;
     }
     
