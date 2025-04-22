@@ -1,3 +1,9 @@
+/**
+ * Write a description of class Room here.
+ *
+ * @Cameron Li
+ * @version April 21
+ */
 import java.util.ArrayList; 
 public class Player
 {
@@ -6,7 +12,7 @@ public class Player
     int health;
     Room location;
     
-    public Player(String d, String n, Room location) {
+    public Player(String n) {
         this.description=d; 
         this.name=n;
         this.location=location;
