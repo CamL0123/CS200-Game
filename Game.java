@@ -43,7 +43,7 @@ public class Game {
         r1.setNextRoom(r2);  
         
         
-        p1 = new Player("player 1", "this is you!", r0);
+        p1 = new Player("player 1");
         //System.out.println("You are starting in: "+p1.getLocation());
     }
     
