@@ -1,8 +1,10 @@
+
+
 /**
  * Write a description of class Room here.
  *
  * @Cameron Li
- * @version april 21 modified room names
+ * @version Feb6
  */
 import java.util.ArrayList; 
 public class Room
@@ -10,7 +12,7 @@ public class Room
     String name;
     String description;
     boolean locked;
-    Room room1, room2, room3;
+    Room nextRoom;
     Animal animal;
 
     public Room (String name, String description, boolean locked, Animal animal) {
@@ -20,22 +22,12 @@ public class Room
         this.animal=animal;
     }
     
-    public void setNeighbors(Room room1, Room room2, Room room3){
-        this.room1 = room1;
-        this.room2 = room2;
-        this.room3 = room3;
+    public void setNextRoom(Room next) {
+        this.nextRoom = next;
     }
     
-    public Room getOneRoom() {
-        return room1;
-    }
-    
-    public Room getTwoRoom() {
-        return room2;
-    }
-    
-    public Room getThreeRoom() {
-        return room3;
+    public Room getNextRoom() {
+        return this.nextRoom;
     }
     
     public Animal getAnimal() {
