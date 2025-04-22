@@ -76,65 +76,6 @@ public class Game {
         }
     }
     
-    public void movePlayer(String direction) {
-        direction = direction.toLowerCase();
-        Room currentRoom = p1.getLocation();
-        
-        Room nextRoom = null;
-        switch (direction) {
-            case "north":
-               nextRoom = currentRoom.getN();
-               break;
-            case "south":
-                nextRoom = currentRoom.getS();
-                break;
-            case "east":
-                nextRoom = currentRoom.getE();
-                break;
-            case "west":
-                nextRoom = currentRoom.getW();
-                break;
-            default:
-            System.out.println("Unknown direction, player did not move.");
-            return;
-                
-        }
-        
-        
-        if (nextRoom != null) {
-            p1.setLocation(nextRoom);
-            System.out.println("You are now in: " + nextRoom);
-                if (nextRoom.animal != null) {
-                int damage = nextRoom.animal.getAnimalDamage();
-                System.out.println("A " + nextRoom.animal.getAnimalName() + " attacked you!");
-                p1.takeDamage(damage);
-                System.out.println("Your health is now at " + p1.getHealth() + " points.");
-            }else {
-            System.out.println("The location you wish to go to is not valid!");
-            System.out.println("You are now in: " + currentRoom); }
-        }else {
-            System.out.println("The location you wish to go to is not valid!");
-        }    
-    }
     
-    public static void main(String[] args){
-        Game gm = new Game();
-        Scanner scan = new Scanner(System.in);
-        String input = "";
-
-        // TODO: write an introduction for your game that will be displayed to the user 
-        // Let the user know what they can do and how to quit, the user quits by entering 'q'
-        System.out.println("Or press q to quit.");
-        while(!input.equals("q")) {
-            input = scan.nextLine();
-            if(input.equals("q")) {
-                System.out.println("Thanks for playing!");
-                break;
-            }else{
-                gm.parseCommand(input);
-            }
-        }
-        scan.close();
-    }
         
 }
