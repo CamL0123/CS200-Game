@@ -1,14 +1,17 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class FactSet {
     public String A, B, C;
     public String[] truths;
-
+    
     public FactSet(String A, String B, String C, String truth1, String truth2) {
         this.A = A;
         this.B = B;
         this.C = C;
         this.truths = new String[]{truth1, truth2};
     }
-
+    
     public static List<FactSet> getOwlFactSets() {
         List<FactSet> list = new ArrayList<>();
         list.add(new FactSet("Owls can rotate their heads 270°.", "Owls are mammals.", "Owls hunt at night.", "A", "C"));

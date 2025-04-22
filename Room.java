@@ -14,12 +14,48 @@ public class Room
     boolean locked;
     Room nextRoom;
     Animal animal;
-
+    // Add fields for the four cardinal directions
+    private Room north;
+    private Room east;
+    private Room south;
+    private Room west;
+    
     public Room (String name, String description, boolean locked, Animal animal) {
         this.name = name;
         this.description = description;
         this.locked = locked;
-        this.animal=animal;
+        this.animal = animal;
+    }
+    
+    /**
+     * Set the neighboring rooms in all four directions
+     * @param north The room to the north
+     * @param east The room to the east
+     * @param south The room to the south
+     * @param west The room to the west
+     */
+    public void setNeighbors(Room north, Room east, Room south, Room west) {
+        this.north = north;
+        this.east = east;
+        this.south = south;
+        this.west = west;
+    }
+    
+    // Add getter methods for each direction
+    public Room getN() {
+        return north;
+    }
+    
+    public Room getE() {
+        return east;
+    }
+    
+    public Room getS() {
+        return south;
+    }
+    
+    public Room getW() {
+        return west;
     }
     
     public void setNextRoom(Room next) {
@@ -33,7 +69,7 @@ public class Room
     public Animal getAnimal() {
         return animal;
     }
-
+    
     public void setAnimal(Animal animal) {
         this.animal = animal;
     }
@@ -43,5 +79,4 @@ public class Room
     public String toString() {
         return name + ": " + description;
     }
-    
 }

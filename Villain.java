@@ -6,34 +6,35 @@
 import java.util.*;
 
 public class Villain extends Animal {
-    public Villain() {
-        super("Villain", 50); 
-        }
-
-    public boolean ExitOrNot(boolean answer){
-        if (answer) {
+    public Villain(Player player) {
+        super("Human", 50); // Name is "Human" as per your comment
+    }
+    
+    public boolean exitOrNot(boolean answer) {
+        // Get the player from the current room
+        Player player = null;
+        // This would ideally be obtained from the game controller
+        // or passed as a parameter
+        
+        if (answer) { // If player wants to leave
+            System.out.println("You chose to leave. Wise decision.");
+            player.resetPlayer();
+            System.out.println("You are back to room0.");
+            return false;
+        } else { // If player wants to fight
             System.out.println("OK. Let's start a fight");
-            Player takeDamage = new Player();
-            takeDamage.takeDamage(50);
-            System.out.println("You have " + takeDamage.getHealth() + " health points left.");
-            if (takeDamage.getHealth() > 20) {
+            player.takeDamage(50);
+            System.out.println("You have " + player.getHealth() + " health points left.");
+            
+            if (player.getHealth() > 50) {
                 System.out.println("You win! You have more than 50 health points left.");
                 return true;
             } else {
                 System.out.println("You lose! You have less than 50 health points left.");
-                Player player = new Player();
                 player.resetPlayer();
                 System.out.println("You are back to room0.");
+                return false;
             }
-
-        } else {
-            System.out.println("Haha. You are not strong enough to fight me. I will let you go this time.");
-            System.out.println("But remember, I will be back!");
-            // Player starts from room0. need a method in Player class to reset the player's health points to 100, and reset the player's position to room0.
-            // usding the Player class's method resetPlayer() to reset health and position
-            Player player = new Player();
-            player.resetPlayer();
-            System.out.println("You are back to room0.");
         }
     }
 }

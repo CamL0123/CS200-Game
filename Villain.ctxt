@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=Villain
+comment1.params=player
+comment1.target=Villain(Player)
+comment2.params=answer
+comment2.target=boolean\ exitOrNot(boolean)
+numComments=3

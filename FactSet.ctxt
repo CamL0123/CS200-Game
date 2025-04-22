@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=FactSet
+comment1.params=A\ B\ C\ truth1\ truth2
+comment1.target=FactSet(java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String)
+comment2.params=
+comment2.target=java.util.List\ getOwlFactSets()
+numComments=3

@@ -16,7 +16,7 @@ import javafx.geometry.Insets;
 import javafx.scene.control.Label;
 import javafx.scene.input.KeyCode;
 
-public class GameGUI extends Application {
+public class GameGui extends Application {
     
     private Game game;    
     

@@ -16,12 +16,12 @@ public class Snake extends Animal {
     }
     
         public String getRiddle() {
-        return "Snake Challenge: Riddle! Answer the following question and you will be able to open the door to the next room\n"+
-        "Category is Snakes!!!\n"+
-        "With scales that shimmer like jewels, I am a creature of beauty and danger. What am I?\n"+
-        "A: king cobra\n" +
-        "B: sand snake\n" +
-        "C: poisonous snake\n" +
+        return "Snake Challenge: Riddle! Answer the following question and you will be able to open the door to the next room"+
+        "Category is Snakes!!!"+
+        "With scales that shimmer like jewels, I am a creature of beauty and danger. What am I?"+
+        "A: king cobra" +
+        "B: sand snake" +
+        "C: poisonous snake" +
         "Enter your answer (e.g., A): ";
     }
     

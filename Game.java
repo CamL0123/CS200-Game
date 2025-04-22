@@ -29,9 +29,9 @@ public class Game {
     
     
     public Game(){
-        Animal snake=new Animal("Snake");
-        Animal owl=new Animal("Owl");
-        Animal villain=new Animal("Human");
+        Animal snake=new Animal("Snake",10);
+        Animal owl=new Animal("Owl",10);
+        Animal villain=new Animal("Human",20);
         
         
         // TODO: instantiate new objects for each of the four rooms r0, r1, r2, r3
@@ -45,7 +45,7 @@ public class Game {
         r2.setNeighbors(null, null, null,r1); 
         
         
-        p1 = new Player("player 1", "this is you!", r0);
+        p1 = new Player("player 1");
         //System.out.println("You are starting in: "+p1.getLocation());
     }
     

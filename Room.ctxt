@@ -1,0 +1,26 @@
+#BlueJ class context
+comment0.target=Room
+comment1.params=name\ description\ locked\ animal
+comment1.target=Room(java.lang.String,\ java.lang.String,\ boolean,\ Animal)
+comment10.params=animal
+comment10.target=void\ setAnimal(Animal)
+comment11.params=
+comment11.target=java.lang.String\ toString()
+comment2.params=north\ east\ south\ west
+comment2.target=void\ setNeighbors(Room,\ Room,\ Room,\ Room)
+comment2.text=\r\n\ Set\ the\ neighboring\ rooms\ in\ all\ four\ directions\r\n\ @param\ north\ The\ room\ to\ the\ north\r\n\ @param\ east\ The\ room\ to\ the\ east\r\n\ @param\ south\ The\ room\ to\ the\ south\r\n\ @param\ west\ The\ room\ to\ the\ west\r\n
+comment3.params=
+comment3.target=Room\ getN()
+comment4.params=
+comment4.target=Room\ getE()
+comment5.params=
+comment5.target=Room\ getS()
+comment6.params=
+comment6.target=Room\ getW()
+comment7.params=next
+comment7.target=void\ setNextRoom(Room)
+comment8.params=
+comment8.target=Room\ getNextRoom()
+comment9.params=
+comment9.target=Animal\ getAnimal()
+numComments=12
