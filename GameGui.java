@@ -1,3 +1,9 @@
+/**
+ * Write a description of class Room here.
+ *
+ * @Cameron Li
+ * @version April 21
+ */
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
