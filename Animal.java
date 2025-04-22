@@ -3,8 +3,8 @@
 /**
  * Write a description of class Animal here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @CS200 Group
+ * @version April 21
  */
 public class Animal
 {
@@ -20,20 +20,12 @@ public class Animal
         this.name= name;
         this.damage = damage;
     }
-    
-    public String setAnimalName(String animalName){
-        this.name= animalName;
-        return name;
-    }
-    
-    public String getAnimalDamage(int animalDamage){
-        this.damage= animalDamage;
-        return name;
-    }
-    
+
     public String getAnimalName(){
         return name;
-    }
+    }    
+    
+    
     public int getAnimalDamage(){
         return damage;
     }
