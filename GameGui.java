@@ -57,7 +57,7 @@ public class GameGui extends Application {
                     }else{
                         label.setText(o.incorrectString());
                         game.getPlayer().takeDamage(10);
-                        healthLabel=new Label("Health" + player.getHealth()+"/100");
+                        healthLabel.setText("Health" + player.getHealth()+"/100");
                     }
                 }
                 
@@ -71,7 +71,7 @@ public class GameGui extends Application {
                     }else{
                         label.setText(s.incorrectString());
                         game.getPlayer().takeDamage(10);
-                        healthLabel=new Label("Health" + player.getHealth()+"/100");
+                        healthLabel.setText("Health" + player.getHealth()+"/100");
                     }
                 }
                 
