@@ -20,13 +20,12 @@ import java.util.ArrayList;
  * Game is a class that defines the rooms and players in the game.It accepts user input.
  *
  * @author Cameron Li
- * @version Spring 2025
+ * @version Spring 2025 April 21
  */
 public class Game {
     
     Player p1;
     Room r0, r1, r2;
-    
     
     
     public Game(){
@@ -47,8 +46,7 @@ public class Game {
         
         
         p1 = new Player("player 1", "this is you!", r0);
-        System.out.println("You are starting in: "+p1.getLocation());
-        System.out.println("Welcome to the game! Where would you like to go?");
+        //System.out.println("You are starting in: "+p1.getLocation());
     }
     
     /**
