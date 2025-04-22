@@ -34,20 +34,36 @@ public class GameGUI extends Application {
         Label healthLabel = new Label("Health: 100 / 100");
         Label label = new Label ("You are now in room One");
         
-        //Instructional text from the game,animals should all 
+        // Health label and text box
+        Label riddle = new Label(game.getCurrentRoomRiddle());
+        
         TextField answerBox = new TextField();
+        
         answerBox.setOnKeyPressed(event -> {
             if (event.getCode() == KeyCode.ENTER){
                 //if (answerBox.getText().equals("Something")){
                 //    label.setText(answerBox.getText());
                 //}
-                Animal animal=game.getAnimal();
-                ((Owl)animal).playTruthGame(answerBox.getText());
                 
+                Animal animal = game.getAnimal();
+                if(animal instanceof Owl){
+                    Owl o = (Owl)animal;
+                    if(o.playTruthGame(answerBox.getText())){
+                        label.setText(o.correctString());
+                        game.movePlayerToNextRoom();
+                        Image imageS = new Image("file:Big Snake.jpg");
+                        imageView.setImage(imageS); 
+                        riddle.setText(game.getCurrentRoomRiddle());
+                    }else{
+                        label.setText(o.incorrectString());
+                        game.getPlayer().takeDamage(10);
+                    }
+                }
             }
         });
         
         answerBox.setPromptText("Enter your answer..."); 
+
 
         // VBox for left side: image, health label, and text box
         VBox leftVBox = new VBox(5, imageView, label);
