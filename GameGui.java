@@ -8,11 +8,16 @@ import javafx.scene.layout.*;
 import javafx.stage.Stage;
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;
+import javafx.scene.input.KeyCode;
 
 public class GameGUI extends Application {
-
+    
+    private Game game;    
+    
     @Override
     public void start(Stage primaryStage) {
+        
+        game = new Game();
         // Load image
         Image image = new Image("file:Big Owl.jpg"); // Replace with your own image path
         ImageView imageView = new ImageView(image);
@@ -21,11 +26,22 @@ public class GameGUI extends Application {
 
         // Health label and text box
         Label healthLabel = new Label("Health: 100 / 100");
-
-        TextField answerBox = new TextField();
-        answerBox.setPromptText("Enter your answer..."); 
-        
         Label label = new Label ("You are now in room One");
+        
+        //Instructional text from the game,animals should all 
+        TextField answerBox = new TextField();
+        answerBox.setOnKeyPressed(event -> {
+            if (event.getCode() == KeyCode.ENTER){
+                //if (answerBox.getText().equals("Something")){
+                //    label.setText(answerBox.getText());
+                //}
+                Animal animal=game.getAnimal();
+                ((Owl)animal).playTruthGame(answerBox.getText());
+                
+            }
+        });
+        
+        answerBox.setPromptText("Enter your answer..."); 
 
         // VBox for left side: image, health label, and text box
         VBox leftVBox = new VBox(5, imageView, label);
