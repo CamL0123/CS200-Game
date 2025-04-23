@@ -123,19 +123,19 @@ public class Game {
         return p1;
     }
     
-    public String getCurrentRoomRiddle(){
+    public String getCurrentRoomQuestion(){//gets the question/prompt for the room
         Room currentRoom = p1.getLocation();
         Animal a = currentRoom.getAnimal();
-        String riddle = "";
+        String question = "";
         System.out.println(a);
         if(a instanceof Owl){
-            riddle = ((Owl)a).getRiddle();
+            question = ((Owl)a).getQuestion();
         }if (a instanceof Snake){
-            riddle = ((Snake)a).getRiddle();
+            question = ((Snake)a).getQuestion();
         }else{
-            riddle = ((Villain)a).getRiddle();
+            question = ((Villain)a).getQuestion();
             }
-        return riddle;
+        return question;
     }
     
     public String checkRoomAnswer(String answer){
