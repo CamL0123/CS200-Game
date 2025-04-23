@@ -1,6 +1,3 @@
-import java.util.Scanner;
-import java.util.ArrayList; 
-
 /**
  * Welcome to the beginning of your adventure game project! Before you begin 
  * in this file, read the instructions in README.md. Make a copy of this file 
@@ -29,9 +26,9 @@ public class Game {
     
     
     public Game(){
-        Animal snake=new Animal("Snake",10);
-        Animal owl=new Animal("Owl",10);
-        Animal villain=new Animal("Human",0);
+        Animal snake=new Snake();
+        Animal owl=new Owl();
+        Animal villain=new Villain();
         
         
         // TODO: instantiate new objects for each of the four rooms r0, r1, r2, r3
