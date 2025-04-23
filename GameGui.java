@@ -85,12 +85,13 @@ public class GameGui extends Application {
                         updateRoomVisuals(imageView, riddle);
                         riddle.setText(game.getCurrentRoomQuestion());
                     } else { // Player wants to fight
-                        player.takeDamage(50); // Villain attacks player
+                        player.takeDamage(30); // Villain attacks player
                         healthLabel.setText("Health: " + player.getHealth() + "/100");
                         
                         if (player.getHealth() > 50){
                             label.setText(v.winningString());
                             // Game continues - player won the fight
+                            riddle.setText("Thanks for playing!");
                         } else {
                             label.setText(v.losingString());
                             game.resetPlayer(game.r0);
