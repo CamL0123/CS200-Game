@@ -92,12 +92,14 @@ public class GameGui extends Application {
                             label.setText(v.winningString());
                             // Game continues - player won the fight
                             riddle.setText("Thanks for playing!");
+                            healthLabel.setText("");
                         } else {
                             label.setText(v.losingString());
                             game.resetPlayer(game.r0);
                             // Update the image to match room0
                             updateRoomVisuals(imageView, riddle);
                             riddle.setText(game.getCurrentRoomQuestion());
+                            healthLabel.setText("Health: " + player.getHealth() + "/100");
                         }
                     }
                 }
