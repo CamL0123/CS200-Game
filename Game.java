@@ -162,25 +162,6 @@ public class Game {
         Room current = p1.getLocation();
         p1.setLocation(current.getNextRoom());
     }
-    
-    public static void main(String[] args){
-        Game gm = new Game();
-        Scanner scan = new Scanner(System.in);
-        String input = "";
 
-        // TODO: write an introduction for your game that will be displayed to the user 
-        // Let the user know what they can do and how to quit, the user quits by entering 'q'
-        System.out.println("Or press q to quit.");
-        while(!input.equals("q")) {
-            input = scan.nextLine();
-            if(input.equals("q")) {
-                System.out.println("Thanks for playing!");
-                break;
-            }else{
-                gm.parseCommand(input);
-            }
-        }
-        scan.close();
-    }
         
 }

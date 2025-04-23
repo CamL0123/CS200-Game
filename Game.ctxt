@@ -1,0 +1,23 @@
+#BlueJ class context
+comment0.target=Game
+comment0.text=\n\ Welcome\ to\ the\ beginning\ of\ your\ adventure\ game\ project\!\ Before\ you\ begin\ \n\ in\ this\ file,\ read\ the\ instructions\ in\ README.md.\ Make\ a\ copy\ of\ this\ file\ \n\ in\ your\ project\ folder\ on\ your\ machine,\ which\ you\ will\ use\ throughout\ the\ \n\ semester.\n\ \n\ Instructions\:\n\ Follow\ the\ inline\ instructions,\ where\ tasks\ are\ marked\ by\ "TODO\:".\ In\ this\ \n\ file,\ you\ will\ accept\ user\ input\ and\ split\ that\ input\ into\ a\ format\ that\ \n\ the\ computer\ can\ understand.\ This\ will\ occur\ continuously\ until\ the\ user\ \n\ enters\ "q".\n\ \n\ Finally,\ write\ \ a\ description\ of\ the\ class\ and\ update\ the\ author\ and\ version\n\ tags.\n\ \n\ Write\ a\ description\ of\ class\ Game\ here.\n\ Game\ is\ a\ class\ that\ defines\ the\ rooms\ and\ players\ in\ the\ game.It\ accepts\ user\ input.\n\n\ @author\ Cameron\ Li\n\ @version\ Spring\ 2025\ April\ 23\n
+comment1.params=
+comment1.target=Game()
+comment2.params=input
+comment2.target=void\ parseCommand(java.lang.String)
+comment2.text=\n\ A\ method\ to\ perform\ an\ action\ based\ on\ user\ input.\ \n\ You\ should\ not\ modify\ this\ method.\n\ \n\ @param\ input\ -\ a\ String\ from\ the\ user's\ input\ command.\n
+comment3.params=direction
+comment3.target=void\ movePlayer(java.lang.String)
+comment4.params=
+comment4.target=Animal\ getAnimal()
+comment5.params=
+comment5.target=Player\ getPlayer()
+comment6.params=
+comment6.target=java.lang.String\ getCurrentRoomQuestion()
+comment7.params=answer
+comment7.target=java.lang.String\ checkRoomAnswer(java.lang.String)
+comment8.params=r
+comment8.target=void\ resetPlayer(Room)
+comment9.params=
+comment9.target=void\ movePlayerToNextRoom()
+numComments=10

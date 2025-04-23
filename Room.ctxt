@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=Room
+comment1.params=name\ description\ locked\ animal
+comment1.target=Room(java.lang.String,\ java.lang.String,\ boolean,\ Animal)
+comment2.params=room1\ room2\ room3
+comment2.target=void\ setNeighbors(Room,\ Room,\ Room)
+comment3.params=
+comment3.target=Room\ getOneRoom()
+comment4.params=
+comment4.target=Room\ getTwoRoom()
+comment5.params=
+comment5.target=Room\ getThreeRoom()
+comment6.params=
+comment6.target=Animal\ getAnimal()
+comment7.params=animal
+comment7.target=void\ setAnimal(Animal)
+comment8.params=
+comment8.target=java.lang.String\ toString()
+numComments=9

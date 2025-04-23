@@ -2,6 +2,12 @@
 comment0.target=Owl
 comment1.params=
 comment1.target=Owl()
-comment2.params=scanner
-comment2.target=boolean\ playTruthGame(java.util.Scanner)
-numComments=3
+comment2.params=
+comment2.target=java.lang.String\ getRiddle()
+comment3.params=answerString
+comment3.target=boolean\ playTruthGame(java.lang.String)
+comment4.params=
+comment4.target=java.lang.String\ correctString()
+comment5.params=
+comment5.target=java.lang.String\ incorrectString()
+numComments=6

@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.target=Player
+comment1.params=n
+comment1.target=Player(java.lang.String)
+comment2.params=
+comment2.target=java.lang.String\ getName()
+comment3.params=
+comment3.target=java.lang.String\ getDescription()
+comment4.params=
+comment4.target=int\ getHealth()
+comment5.params=newHealth
+comment5.target=void\ setHealth(int)
+comment6.params=amount
+comment6.target=void\ takeDamage(int)
+comment7.params=newLocation
+comment7.target=void\ setLocation(Room)
+comment8.params=
+comment8.target=Room\ getLocation()
+comment9.params=
+comment9.target=java.lang.String\ toString()
+numComments=10
