@@ -9,7 +9,7 @@ public class Owl extends Animal {
     factSets = FactSet.getOwlFactSets(); 
     }
 
-    public String getRiddle() {
+    public String getQuestion() {
         Random rand = new Random();
         set = factSets.get(rand.nextInt(factSets.size()));
 
