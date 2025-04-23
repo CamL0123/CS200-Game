@@ -12,6 +12,9 @@ public class Villain extends Animal {
         super("Human", 50); // Using "Villain" as the name
         this.player = player; // Save the player reference
     }
+    public String getQuestion() {
+        return "The villain appears, and asks you 'do you want to leave?'";
+    }
     
     /**
      * Determines if the player wants to exit or fight
@@ -44,7 +47,7 @@ public class Villain extends Animal {
      * @return A string message for when the player wins the fight
      */
     public String winningString() {
-        return "You defeated the villain! You can continue your journey.";
+        return "Villain will not let you go unless you fight. You defeated the villain! You can continue your journey.";
     }
     
     /**
@@ -52,6 +55,6 @@ public class Villain extends Animal {
      * @return A string message for when the player loses the fight
      */
     public String losingString() {
-        return "The villain was too strong! You have been defeated and sent back to the beginning.";
+        return "Villain will not let you go unless you fight. The villain was too strong! You have been defeated and sent back to the beginning.";
     }
 }
