@@ -2,7 +2,7 @@
  * Write a description of class Room here.
  *
  * @Cameron Li
- * @version April 22
+ * @version April 23
  */
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -25,7 +25,7 @@ public class GameGui extends Application {
         
         game = new Game();
         // Load image
-        Image image = new Image("file:Big Owl.jpg"); // Replace with your own image path
+        Image image = new Image("file:Big Snake.jpg"); // Replace with your own image path
         ImageView imageView = new ImageView(image);
         imageView.setFitWidth(150);
         imageView.setPreserveRatio(true);
@@ -52,9 +52,8 @@ public class GameGui extends Application {
                     if(o.playTruthGame(userAnswer)){
                         label.setText(o.correctString());
                         game.movePlayerToNextRoom();
-                        Image imageO = new Image("file:Big Owl.jpg");
-                        imageView.setImage(imageO); 
                         riddle.setText(game.getCurrentRoomQuestion());
+                        updateRoomVisuals(imageView, riddle);
                     } else {
                         label.setText(o.incorrectString());
                         game.getPlayer().takeDamage(10);
@@ -67,8 +66,7 @@ public class GameGui extends Application {
                     if (s.playRiddle(userAnswer)){ // Changed to match your Snake class
                         label.setText(s.correctString());
                         game.movePlayerToNextRoom();
-                        Image imageS = new Image("file:Big Snake.jpg"); // Removed space after file:
-                        imageView.setImage(imageS);
+                        updateRoomVisuals(imageView, riddle);
                         riddle.setText(game.getCurrentRoomQuestion());
                     } else {
                         label.setText(s.incorrectString());
@@ -84,8 +82,7 @@ public class GameGui extends Application {
                         game.resetPlayer(game.r0); // Use the proper room reference
                         healthLabel.setText("Health: " + player.getHealth() + "/100");
                         // Update the image to match room0
-                        Image roomImage = new Image("file:Big Owl.jpg"); // Change to appropriate image
-                        imageView.setImage(roomImage);
+                        updateRoomVisuals(imageView, riddle);
                         riddle.setText(game.getCurrentRoomQuestion());
                     } else { // Player wants to fight
                         player.takeDamage(50); // Villain attacks player
@@ -98,14 +95,15 @@ public class GameGui extends Application {
                             label.setText(v.losingString());
                             game.resetPlayer(game.r0);
                             // Update the image to match room0
-                            Image roomImage = new Image("file:Big Owl.jpg"); // Change to appropriate image
-                            imageView.setImage(roomImage);
+                            updateRoomVisuals(imageView, riddle);
                             riddle.setText(game.getCurrentRoomQuestion());
                         }
                     }
                 }
             }
         });
+    
+
         
         answerBox.setPromptText("Enter your answer..."); 
 
@@ -121,8 +119,7 @@ public class GameGui extends Application {
             healthLabel.setText("Health: 100/100");
             label.setText("You are now in room One");
             riddle.setText(game.getCurrentRoomQuestion());
-            Image roomImage = new Image("file:Big Owl.jpg");
-            imageView.setImage(roomImage);
+            updateRoomVisuals(imageView, riddle);
         });
         
         VBox rightVBox = new VBox(10, startOverButton, healthLabel, answerBox);
@@ -142,4 +139,21 @@ public class GameGui extends Application {
     public static void main(String[] args) {
         launch(args);
     }
+    
+    private void updateRoomVisuals(ImageView imageView, Label riddleLabel) {
+    Animal animal = game.getAnimal();
+
+    // Update image based on current animal
+        if (animal instanceof Owl) {
+            imageView.setImage(new Image("file:Big Owl.jpg"));
+        } else if (animal instanceof Snake) {
+            imageView.setImage(new Image("file:Big Snake.jpg"));
+        } else if (animal instanceof Villain) {
+            imageView.setImage(new Image("file:Villain.jpg"));
+        }
+
+    // Update the riddle/question
+    riddleLabel.setText(game.getCurrentRoomQuestion());
+    }
+
 }
