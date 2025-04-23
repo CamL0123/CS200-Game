@@ -8,7 +8,7 @@ import java.util.*;
 public class Villain extends Animal {
     private Player player;
     
-    public Villain(Player player) {
+    public Villain() {
         super("Human", 50); // Using "Villain" as the name
         this.player = player; // Save the player reference
     }
