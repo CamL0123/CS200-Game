@@ -6,35 +6,52 @@
 import java.util.*;
 
 public class Villain extends Animal {
+    private Player player;
+    
     public Villain(Player player) {
-        super("Human", 50); // Name is "Human" as per your comment
+        super("Human", 50); // Using "Villain" as the name
+        this.player = player; // Save the player reference
     }
     
-    public boolean exitOrNot(boolean answer) {
-        // Get the player from the current room
-        Player player = null;
-        // This would ideally be obtained from the game controller
-        // or passed as a parameter
+    /**
+     * Determines if the player wants to exit or fight
+     * @param answer The player's text input
+     * @return true if player wants to exit, false if they want to fight
+     */
+    public boolean exitOrNot(String answer) {
+        // Process player's text response
+        String lowerAnswer = answer.toLowerCase().trim();
         
-        if (answer) { // If player wants to leave
-            System.out.println("You chose to leave. Wise decision.");
-            player.resetPlayer();
-            System.out.println("You are back to room0.");
-            return false;
-        } else { // If player wants to fight
-            System.out.println("OK. Let's start a fight");
-            player.takeDamage(50);
-            System.out.println("You have " + player.getHealth() + " health points left.");
-            
-            if (player.getHealth() > 50) {
-                System.out.println("You win! You have more than 50 health points left.");
-                return true;
-            } else {
-                System.out.println("You lose! You have less than 50 health points left.");
-                player.resetPlayer();
-                System.out.println("You are back to room0.");
-                return false;
-            }
-        }
+        // Check if answer indicates exit (yes, exit, leave, retreat)
+        boolean wantsToExit = lowerAnswer.contains("yes") || 
+                             lowerAnswer.contains("exit") || 
+                             lowerAnswer.contains("leave") ||
+                             lowerAnswer.contains("retreat");
+        
+        return wantsToExit;
+    }
+    
+    /**
+     * Returns a message when the player decides to go back rather than fight
+     * @return A string message for when the player retreats
+     */
+    public String goBackString() {
+        return "You wisely choose to retreat. You return to the first room.";
+    }
+    
+    /**
+     * Returns a message when the player defeats the villain
+     * @return A string message for when the player wins the fight
+     */
+    public String winningString() {
+        return "You defeated the villain! You can continue your journey.";
+    }
+    
+    /**
+     * Returns a message when the villain defeats the player
+     * @return A string message for when the player loses the fight
+     */
+    public String losingString() {
+        return "The villain was too strong! You have been defeated and sent back to the beginning.";
     }
 }
