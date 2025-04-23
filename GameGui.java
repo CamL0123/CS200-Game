@@ -35,7 +35,7 @@ public class GameGui extends Application {
         Label label = new Label ("You are now in room One");
         
         // Health label and text box
-        Label riddle = new Label(game.getCurrentRoomRiddle());
+        Label riddle = new Label(game.getCurrentRoomQuestion());
         
         TextField answerBox = new TextField();
         
