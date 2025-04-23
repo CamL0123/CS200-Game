@@ -53,7 +53,7 @@ public class GameGui extends Application {
                         game.movePlayerToNextRoom();
                         Image imageO = new Image("file:Big Owl.jpg");
                         imageView.setImage(imageO); 
-                        riddle.setText(game.getCurrentRoomRiddle());
+                        riddle.setText(game.getCurrentRoomQuestion());
                     }else{
                         label.setText(o.incorrectString());
                         game.getPlayer().takeDamage(10);
@@ -67,7 +67,7 @@ public class GameGui extends Application {
                         label.setText(s.correctString());
                         game.movePlayerToNextRoom();
                         Image imageS = new Image("file: Big Snake.jpg");
-                        riddle.setText(game.getCurrentRoomRiddle());
+                        riddle.setText(game.getCurrentRoomQuestion());
                     }else{
                         label.setText(s.incorrectString());
                         game.getPlayer().takeDamage(10);
@@ -76,6 +76,7 @@ public class GameGui extends Application {
                 }
                 
                 if (animal instanceof Villain){
+                    riddle.setText(game.getCurrentRoomQuestion());
                     Villain v=(Villain)animal;
                     if (v.ExitOrNot(answerBox.getText())){
                         label.setText(v.goBackString());//this method should return a string like "Haha sorry you're being sent back"
