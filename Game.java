@@ -44,6 +44,7 @@ public class Game {
         
         
         p1 = new Player("player 1");
+        p1.setLocation(r0);
         //System.out.println("You are starting in: "+p1.getLocation());
     }
     
@@ -130,10 +131,12 @@ public class Game {
         System.out.println(a);
         if(a instanceof Owl){
             question = ((Owl)a).getQuestion();
-        }if (a instanceof Snake){
+        }else if (a instanceof Snake){
             question = ((Snake)a).getQuestion();
-        }else{
-            question = ((Villain)a).getQuestion();
+        }else if (a instanceof Villain){
+            question = ((Villain)a).getQuestion();}
+            else{
+                question = "no question available";
             }
         return question;
     }
