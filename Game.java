@@ -45,32 +45,7 @@ public class Game {
         //System.out.println("You are starting in: "+p1.getLocation());
     }
     
-    /**
-     * A method to perform an action based on user input. 
-     * You should not modify this method.
-     * 
-     * @param input - a String from the user's input command.
-     */
-    public void parseCommand(String input) {
-        
-        String[] wordList = input.split("[\s]");
-        String verb;
-        String noun;
-        
-        if(wordList.length < 2 || wordList.length > 2) {
-            System.out.println("Only 2 word commands allowed!");
-        } else {
-            verb = wordList[0];
-            noun = wordList[1];
-            switch (verb) {
-                case "go":
-                    movePlayer(noun);
-                    break;
-                default:
-                    System.out.println(verb + " is not a known verb!");
-            }
-        }
-    }
+
     public void movePlayer(String direction) {
         direction = direction.toLowerCase();
         Room currentRoom = p1.getLocation();
