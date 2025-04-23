@@ -15,7 +15,7 @@ public class Snake extends Animal {
         super("Snake", 10);
     }
     
-        public String getRiddle() {
+        public String getQuestion() {
         return "Snake Challenge: Riddle! Answer the following question and you will be able to open the door to the next room\n"+
         "Category is Snakes!!!\n"+
         "With scales that shimmer like jewels, I am a creature of beauty and danger. What am I?\n"+
