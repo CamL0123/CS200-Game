@@ -39,7 +39,7 @@ public class Villain extends Animal {
      * @return A string message for when the player retreats
      */
     public String goBackString() {
-        return "You wisely choose to retreat. You return to the first room.";
+        return "Haha nice try. You wish! You return to the first room.";
     }
     
     /**
