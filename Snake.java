@@ -26,7 +26,7 @@ public class Snake extends Animal {
     }
     
     public boolean playRiddle(String answerString) {
-        return answerString.equals("A");
+        return answerString.toUpperCase().equals("A");
     }
     
     public String correctString(){
