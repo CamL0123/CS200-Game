@@ -100,7 +100,6 @@ public class Game {
         Room currentRoom = p1.getLocation();
         Animal a = currentRoom.getAnimal();
         String question = "";
-        System.out.println(a);
         if(a instanceof Owl){
             question = ((Owl)a).getQuestion();
         }else if (a instanceof Snake){
