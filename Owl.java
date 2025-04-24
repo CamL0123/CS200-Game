@@ -21,8 +21,8 @@ public class Owl extends Animal {
         return riddle;
     }
 
-    public boolean playTruthGame(String answerString) {
-        return answerString.contains(set.truths[0]) && answerString.contains(set.truths[1]) && answerString.length() == 2;
+     public boolean playTruthGame(String answerString) {
+        return answerString.toUpperCase().contains(set.truths[0]) && answerString.toUpperCase().contains(set.truths[1]) && answerString.length() == 2;
     }
     
     public String correctString(){
