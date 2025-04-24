@@ -47,7 +47,7 @@ public class Villain extends Animal {
      * @return A string message for when the player wins the fight
      */
     public String winningString() {
-        return "Villain will not let you go unless you fight. You defeated the villain! You can continue your journey.";
+        return "You've figured out it's a trick! Villain will not let you go unless you fight. You defeated the villain! You can continue your journey.";
     }
     
     /**
@@ -55,6 +55,6 @@ public class Villain extends Animal {
      * @return A string message for when the player loses the fight
      */
     public String losingString() {
-        return "Villain will not let you go unless you fight. The villain was too strong! You have been defeated and sent back to the beginning.";
+        return "You've figured out it's a trick! Villain will not let you go unless you fight. The villain was too strong! You have been defeated and sent back to the beginning.";
     }
 }
