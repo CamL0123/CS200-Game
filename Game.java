@@ -73,20 +73,20 @@ public class Game {
         
         if (nextRoom != null) {
             p1.setLocation(nextRoom);
-            System.out.println("You are now in: " + nextRoom);
+            //System.out.println("You are now in: " + nextRoom);
                 if (nextRoom.animal != null) {
                 int damage = nextRoom.animal.getAnimalDamage();
-                System.out.println("A " + nextRoom.animal.getAnimalName() + " attacked you!");
+                //System.out.println("A " + nextRoom.animal.getAnimalName() + " attacked you!");
                 p1.takeDamage(damage);
-                System.out.println("Your health is now at " + p1.getHealth() + " points.");
-            }else {
-            System.out.println("The location you wish to go to is not valid!");
-            System.out.println("You are now in: " + currentRoom); }
-        }else {
-            System.out.println("The location you wish to go to is not valid!");
-        }    
+                //System.out.println("Your health is now at " + p1.getHealth() + " points.");
+            }//else {
+            //System.out.println("The location you wish to go to is not valid!");
+            //System.out.println("You are now in: " + currentRoom); }
+        //}//else {
+            //System.out.println("The location you wish to go to is not valid!");
+        //}    
     }
-    
+}
     public Animal getAnimal(){
         Room currentRoom = p1.getLocation();
         return currentRoom.getAnimal();
