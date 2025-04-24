@@ -47,9 +47,6 @@ public class Player
         if (newLocation != null){
             location=newLocation;
         }
-        else{
-            System.out.println("The location you wish to go to is not valid!");
-        }
     }
     // This method should check if the location is valid (not null) and print a message if it is not valid
  
